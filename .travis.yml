@@ -1,19 +1,13 @@
-jobs:
-  language: c
+language: c
 
-  include:
-    - stage: build
-    - script:
-      - make
-    - stage: test
-    - script:
-      - ./hello
-
-  branches:
-    only:
-    - master
-
-  
+- stage: build
+    - script: make clean all tests
+    
+- stage: test
+    - script: ./hello
+    
+- branches:
+    - only: master
 
   
 
