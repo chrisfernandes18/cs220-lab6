@@ -1,13 +1,16 @@
+dist: xenial
+
+addons:
+  apt:
+    packages:
+      - libyaml-dev
+
 language: c
 
-- stage: build
-    - script: make clean all tests
-    
-- stage: test
-    - script: ./hello
-    
-- branches:
-    - only: master
+compiler: gcc
+
+script:
+  - make clean all tests
 
   
 
